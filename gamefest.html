@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Game Fest - TechFest '25</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Animated Background for Game Fest (visible on all devices) */
+    #gamefest-bg {
+      position: fixed;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      height: calc(100% - 60px);
+      z-index: -1;
+      background: linear-gradient(45deg, #0f2027, #203a43, #2c5364);
+      background-size: 200% 200%;
+      animation: swirlAnimation 20s ease infinite;
+    }
+    @keyframes swirlAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .floating-particle {
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background: #00ffff;
+      border-radius: 50%;
+      opacity: 0.6;
+      animation: driftAnimation 12s infinite ease-in-out;
+    }
+    @keyframes driftAnimation {
+      0% { transform: translate(0, 0) scale(1); opacity: 0.6; }
+      50% { transform: translate(20vw, -40vh) scale(1.2); opacity: 0.8; }
+      100% { transform: translate(0, -80vh) scale(0.8); opacity: 0.4; }
+    }
+    /* Navbar styling */
+    header.navbar {
+      background: radial-gradient(circle, rgba(15,32,39,0.9), rgba(32,58,67,0.9), rgba(44,83,100,0.9));
+    }
+    /* Game Fest Cards */
+    .gamefest-card {
+      background: rgba(0, 0, 0, 0.7);
+      border: 1px solid cyan;
+      color: white;
+      transition: transform 0.3s, box-shadow 0.3s;
+      height: 100%;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: cardSlideIn 1s forwards;
+    }
+    @keyframes cardSlideIn {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .gamefest-card:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px cyan;
+    }
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      /* Hide only the logo image in navbar */
+      .navbar-brand img {
+        display: none;
+      }
+      .navbar .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .gamefest-card {
+        margin-bottom: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Animated Background -->
+  <div id="animated-bg"></div>
+  <!-- <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const bg = document.getElementById("gamefest-bg");
+      for (let i = 0; i < 30; i++) {
+        let particle = document.createElement("div");
+        particle.className = "floating-particle";
+        particle.style.left = Math.random() * 100 + "vw";
+        particle.style.top = Math.random() * 100 + "vh";
+        particle.style.animationDuration = (Math.random() * 3 + 6) + "s";
+        particle.style.animationDelay = Math.random() * 5 + "s";
+        bg.appendChild(particle);
+      }
+    });
+  </script> -->
+
+  <!-- Navigation Bar -->
+  <header class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">
+        <img src="logo.png" alt="Logo" class="event-logo me-2" />
+        TechFest '25
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavGamefest">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNavGamefest">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="#">Game Fest</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section for Game Fest -->
+  <section id="gamefest-hero" class="d-flex align-items-center justify-content-center text-center" style="padding-top:80px; color:white;">
+    <div class="hero-content">
+      <h1 class="display-2">Game Fest</h1>
+      <p class="lead">Experience the ultimate gaming showdown!</p>
+    </div>
+  </section>
+
+  <!-- Game Fest Events Section -->
+  <section id="gamefest-events" class="container py-5">
+    <h2 class="section-title">Game Fest Events</h2>
+    <div class="row g-4">
+      <!-- Gaming Tournament Card -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card gamefest-card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Gaming Tournament</h5>
+            <p class="card-text">Compete in Esports tournaments for games like BGMI, Valorant, etc.</p>
+          </div>
+          <div class="card-footer d-flex">
+            <a href="#" class="btn btn-outline-light flex-fill me-2">Register</a>
+            <a href="#" class="btn btn-outline-light flex-fill">Explore</a>
+          </div>
+        </div>
+      </div>
+      <!-- Tech Treasure Hunt Card -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card gamefest-card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Tech Treasure Hunt</h5>
+            <p class="card-text">Solve clues and complete challenges to uncover hidden tech secrets.</p>
+          </div>
+          <div class="card-footer d-flex">
+            <a href="#" class="btn btn-outline-light flex-fill me-2">Register</a>
+            <a href="#" class="btn btn-outline-light flex-fill">Explore</a>
+          </div>
+        </div>
+      </div>
+      <!-- Code Golf Card -->
+      <div class="col-md-6 col-lg-4">
+        <div class="card gamefest-card h-100">
+          <div class="card-body">
+            <h5 class="card-title">Code Golf</h5>
+            <p class="card-text">Solve programming challenges using the least amount of code possible.</p>
+          </div>
+          <div class="card-footer d-flex">
+            <a href="#" class="btn btn-outline-light flex-fill me-2">Register</a>
+            <a href="#" class="btn btn-outline-light flex-fill">Explore</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sponsors Section -->
+  <!-- <section id="sponsors" class="container text-center py-5">
+    <h2 class="section-title">Sponsors</h2>
+    <p>We are proud to be supported by industry leaders.</p>
+  </section> -->
+
+  <!-- About Us Section -->
+  <!-- <section id="about" class="container text-center py-5">
+    <h2 class="section-title">About SASET</h2>
+    <p>
+      SASET is the premier technology festival hosted by RAHTRIYA RAKSHA UNIVERSITY. Our mission is to inspire innovation and excellence in technology and defence.
+      Join us for an unforgettable experience featuring competitions, workshops, exhibitions, and much more.
+    </p>
+    <a href="about.html" class="btn btn-outline-light">Read More</a>
+  </section> -->
+
+  <!-- Video Section -->
+  <!-- <section id="video" class="container text-center py-5">
+    <h2 class="section-title">TechFest Highlights</h2>
+    <div class="video-container">
+      <iframe width="100%" height="450" src="https://www.youtube.com/embed/your-video-id" title="TechFest Highlights" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+    <a href="video.html" class="btn btn-outline-light mt-3">Watch More</a>
+  </section> -->
+
+  <!-- Event Venue Section -->
+  <!-- <section id="venue" class="container text-center py-5">
+    <h2 class="section-title">Event Venue</h2>
+    <div class="map-container">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+  </section> -->
+
+  <!-- Contact Section -->
+  <section id="contact" class="container text-center py-5">
+    <h2 class="section-title">Contact Us</h2>
+    <p>Follow us on social media and get in touch.</p>
+    <div>
+      <a href="#" class="text-cyan me-3"><i class="fab fa-instagram fa-2x"></i></a>
+      <a href="#" class="text-cyan me-3"><i class="fab fa-twitter fa-2x"></i></a>
+      <a href="#" class="text-cyan me-3"><i class="fab fa-linkedin fa-2x"></i></a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="text-center p-3">
+    &copy; 2025 TechFest. All Rights Reserved.
+  </footer>
+
+  <!-- Particles.js Library -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

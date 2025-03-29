@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registration - TechFest '25</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      background-color: #000;
+      color: #fff;
+      font-family: 'Orbitron', sans-serif;
+    }
+    .registration-container {
+      max-width: 500px;
+      margin: 100px auto;
+      background: rgba(0, 0, 0, 0.8);
+      padding: 30px;
+      border: 1px solid cyan;
+      border-radius: 8px;
+    }
+    .registration-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: cyan;
+    }
+    .form-label {
+      color: cyan;
+    }
+    .form-control {
+      background: transparent;
+      border: 1px solid cyan;
+      color: #fff;
+    }
+    .form-control:focus {
+      box-shadow: none;
+      border-color: cyan;
+    }
+    .btn-custom {
+      background: cyan;
+      color: #000;
+      border: none;
+    }
+    .btn-custom:hover {
+      background: darkcyan;
+    }
+    /* Responsive adjustments */
+    @media (max-width: 576px) {
+      .registration-container {
+        margin: 50px 20px;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-black">
+  <!-- Navigation Bar -->
+  <header class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">TechFest '25</a>
+    </div>
+  </header>
+
+  <!-- Registration Form Container -->
+  <div class="registration-container">
+    <h2>Registration</h2>
+    <form action="#" method="post">
+      <!-- Full Name -->
+      <div class="mb-3">
+        <label for="regName" class="form-label">Full Name</label>
+        <input type="text" class="form-control" id="regName" placeholder="Enter your full name" required>
+      </div>
+      <!-- Email Address -->
+      <div class="mb-3">
+        <label for="regEmail" class="form-label">Email Address</label>
+        <input type="email" class="form-control" id="regEmail" placeholder="Enter your email" required>
+      </div>
+      <!-- Phone Number -->
+      <div class="mb-3">
+        <label for="regPhone" class="form-label">Phone Number</label>
+        <input type="tel" class="form-control" id="regPhone" placeholder="Enter your phone number" required>
+      </div>
+      <!-- Date of Birth -->
+      <div class="mb-3">
+        <label for="regDOB" class="form-label">Date of Birth</label>
+        <input type="date" class="form-control" id="regDOB" required>
+      </div>
+      <!-- Gender -->
+      <div class="mb-3">
+        <label class="form-label">Gender</label>
+        <div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="regGender" id="genderMale" value="male" required>
+            <label class="form-check-label" for="genderMale">Male</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="regGender" id="genderFemale" value="female">
+            <label class="form-check-label" for="genderFemale">Female</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="regGender" id="genderOther" value="other">
+            <label class="form-check-label" for="genderOther">Other</label>
+          </div>
+        </div>
+      </div>
+      <!-- Address -->
+      <div class="mb-3">
+        <label for="regAddress" class="form-label">Address</label>
+        <textarea class="form-control" id="regAddress" rows="3" placeholder="Enter your address" required></textarea>
+      </div>
+      <!-- Password -->
+      <div class="mb-3">
+        <label for="regPassword" class="form-label">Password</label>
+        <input type="password" class="form-control" id="regPassword" placeholder="Enter password" required>
+      </div>
+      <!-- Confirm Password -->
+      <div class="mb-3">
+        <label for="regConfirmPassword" class="form-label">Confirm Password</label>
+        <input type="password" class="form-control" id="regConfirmPassword" placeholder="Confirm password" required>
+      </div>
+      <!-- Terms and Conditions -->
+      <div class="mb-3 form-check">
+        <input type="checkbox" class="form-check-input" id="regTerms" required>
+        <label class="form-check-label" for="regTerms">I agree to the Terms and Conditions</label>
+      </div>
+      <!-- Submit Button -->
+      <button type="submit" class="btn btn-custom w-100">Register</button>
+    </form>
+    <div class="text-center mt-3">
+      <p>Already have an account? <a href="login.html" class="text-cyan">Login here</a></p>
+      <p><a href="index.html" class="text-cyan">Back to Home</a></p>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
